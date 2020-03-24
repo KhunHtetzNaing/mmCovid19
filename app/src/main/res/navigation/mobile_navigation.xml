@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_total">
+
+    <fragment
+        android:id="@+id/navigation_total"
+        android:name="com.htetznaing.covid_19counter.ui.total.TotalFragment"
+        android:label="@string/title_total"
+        tools:layout="@layout/fragment_total" />
+
+    <fragment
+        android:id="@+id/navigation_country"
+        android:name="com.htetznaing.covid_19counter.ui.country.CountryFragment"
+        android:label="@string/title_country"
+        tools:layout="@layout/fragment_country" />
+
+    <fragment
+        android:id="@+id/navigation_note"
+        android:name="com.htetznaing.covid_19counter.ui.note.NoteFragment"
+        android:label="@string/title_note"
+        tools:layout="@layout/fragment_note" />
+</navigation>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_total"
+        android:icon="@drawable/ic_total"
+        android:title="@string/title_total" />
+
+    <item
+        android:id="@+id/navigation_country"
+        android:icon="@drawable/ic_world"
+        android:title="@string/title_country" />
+
+    <item
+        android:id="@+id/navigation_note"
+        android:icon="@drawable/ic_hand_wash"
+        android:title="@string/title_note" />
+
+</menu>

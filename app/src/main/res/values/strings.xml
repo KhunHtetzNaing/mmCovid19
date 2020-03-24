@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Covid-19 Counter</string>
+
+<!--    Bottom Text-->
+    <string name="title_total">စုစုပေါင်း</string>
+    <string name="title_country">နိုင်ငံအလိုက်</string>
+    <string name="title_note">လိုက်နာရန်</string>
+
+    <string name="affects">ကူးစက်ခံရသူ</string>
+    <string name="today_affects">ယနေ့ကူးစက်ခံရသူ</string>
+    <string name="deaths">သေဆုံးသူ</string>
+    <string name="today_deaths">ယနေ့သေဆုံးသူ</string>
+    <string name="recovered">ပြန်လည်ကောင်းမွန်သူ</string>
+    <string name="active">ကုသဆဲ</string>
+    <string name="critical">ပြင်းထန်လူနာ</string>
+
+    <string name="wait">ခနစောင့်ပါ</string>
+    <string name="load_data">အချက်လက်များရယူနေပါသည်...</string>
+    <string name="today">ယနေ့</string>
+    <string name="yesterday">မနေ့က</string>
+    <string name="search_by_country_name">နိုင်ငံအမည်ဖြင့်ရှာဖွေရန်</string>
+    <string name="search">ရှာဖွေရန်</string>
+    <string name="not_found_data">အချက်အလက်ရှာမတွေ့ပါ</string>
+    <string name="des">မကြာခဏလက်ကိုဆပ်ပြာဖြင့်သေချာဆေးကြောပါ။</string>
+
+</resources>
