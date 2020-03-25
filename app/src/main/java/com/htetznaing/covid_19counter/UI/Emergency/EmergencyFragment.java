@@ -1,4 +1,4 @@
-package com.htetznaing.covid_19counter.ui.country;
+package com.htetznaing.covid_19counter.UI.Emergency;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -6,65 +6,68 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.htetznaing.covid_19counter.Adapter.CountryRecyclerViewAdapter;
+import com.google.gson.Gson;
+import com.htetznaing.covid_19counter.Adapter.EmergencyAdapter;
+import com.htetznaing.covid_19counter.Constants;
 import com.htetznaing.covid_19counter.MainActivity;
+import com.htetznaing.covid_19counter.Model.EmergencyModel;
 import com.htetznaing.covid_19counter.R;
-import com.htetznaing.covid_19counter.Utils.API.Model.CountryModel;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class CountryFragment extends Fragment {
-    RecyclerView recyclerView;
-    GridLayoutManager layoutManager;
-    List<CountryModel> data = new ArrayList<>(),temp_data = new ArrayList<>();
-    CountryRecyclerViewAdapter adapter;
-    MaterialSearchBar searchBar;
-    boolean searchMode = false;
+public class EmergencyFragment extends Fragment {
+
+    private RecyclerView recView;
+    private List<EmergencyModel> data=new ArrayList<>(),temp_data = new ArrayList<>();
+    private EmergencyAdapter adapter;
+    private MaterialSearchBar searchBar;
+    private boolean searchMode = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_country, container, false);
-        recyclerView = root.findViewById(R.id.recyclerView);
 
-        adapter = new CountryRecyclerViewAdapter(data);
-        layoutManager =new GridLayoutManager(getContext(), 1);
-        recyclerView.setHasFixedSize(true);
+        View root = inflater.inflate(R.layout.fragment_emergency, container, false);
+        recView = root.findViewById(R.id.recView);
+        searchBar = root.findViewById(R.id.searchBar);
+        setupSearch();
 
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        recView.setHasFixedSize(true);
+        adapter = new EmergencyAdapter(data);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recView.setLayoutManager(layoutManager);
+        recView.setAdapter(adapter);
 
-
-        // Create the observer which updates the UI.
-        final Observer<List<CountryModel>[]> country = new Observer<List<CountryModel>[]>() {
+        final Observer<String> nameObserver = new Observer<String>() {
             @Override
-            public void onChanged(@Nullable final List<CountryModel>[] countries) {
-                if (countries != null && countries[0] != null) {
-                    data.clear();
-                    data.addAll(countries[0]);
-                    if (!searchMode) {
-                        addToRecycler();
-                    }else {
-                        temp_data.clear();
-                        temp_data.addAll(data);
-                    }
+            public void onChanged(@Nullable String all) {
+                if (all==null){
+                    all = Constants.getEmergency();
                 }
+                List<EmergencyModel> temp = Arrays.asList(new Gson().fromJson(all,EmergencyModel[].class));
+                data.clear();
+                data.addAll(temp);
+                addToRecycler();
             }
         };
+        MainActivity.instance.emergencyViewModel.getEmergency().observe(MainActivity.instance, nameObserver);
+        return root;
+    }
 
-        searchBar = root.findViewById(R.id.searchBar);
-
+    private void setupSearch() {
         searchBar.addTextChangeListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -106,21 +109,6 @@ public class CountryFragment extends Fragment {
             }
         });
         searchBar.setCardViewElevation(10);
-
-        MainActivity.instance.countryViewModel.getCountries().observe(MainActivity.instance, country);
-        return root;
-    }
-
-    private void searchMe(String text){
-        List<CountryModel> temp = new ArrayList<>();
-        for (CountryModel model : temp_data){
-            if (model.getCountry().toLowerCase().contains(text.toLowerCase()) || model.getCountryNameInEnglish().toLowerCase().contains(text.toLowerCase())){
-                temp.add(model);
-            }
-        }
-        data.clear();
-        data.addAll(temp);
-        addToRecycler();
     }
 
     private void addToRecycler(){
@@ -130,4 +118,17 @@ public class CountryFragment extends Fragment {
             Toast.makeText(getContext(), getString(R.string.not_found_data), Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void searchMe(String text){
+            List<EmergencyModel> temp = new ArrayList<>();
+            for (EmergencyModel model : temp_data) {
+                if (model.getDesc().toLowerCase().contains(text.toLowerCase()) || model.getName().toLowerCase().contains(text.toLowerCase()) || Constants.cleanNumber(model.getPhone()).contains(text.toLowerCase())) {
+                    temp.add(model);
+                }
+            }
+            data.clear();
+            data.addAll(temp);
+            addToRecycler();
+    }
+
 }

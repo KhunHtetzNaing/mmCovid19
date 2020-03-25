@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_total"
+        android:id="@+id/navigation_main"
         android:icon="@drawable/ic_total"
-        android:title="@string/title_total" />
+        android:title="@string/app_name" />
 
     <item
         android:id="@+id/navigation_country"
@@ -12,8 +12,19 @@
         android:title="@string/title_country" />
 
     <item
+        android:id="@+id/navigation_news"
+        android:icon="@drawable/ic_news"
+        android:title="@string/title_news" />
+
+    <item
         android:id="@+id/navigation_note"
         android:icon="@drawable/ic_hand_wash"
         android:title="@string/title_note" />
+
+
+    <item
+        android:id="@+id/navigation_emergency"
+        android:icon="@drawable/ic_phone"
+        android:title="@string/title_emergency" />
 
 </menu>

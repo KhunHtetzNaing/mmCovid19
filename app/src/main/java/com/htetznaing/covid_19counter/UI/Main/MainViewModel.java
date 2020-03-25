@@ -1,15 +1,22 @@
-package com.htetznaing.covid_19counter.ui.total;
+package com.htetznaing.covid_19counter.UI.Main;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.htetznaing.covid_19counter.Utils.API.Model.AllModel;
 
-public class TotalViewModel extends ViewModel {
+public class MainViewModel extends ViewModel {
 
     // Create a LiveData with a String
     private MutableLiveData<AllModel> currentName;
+    private MutableLiveData<String> mm_data;
+
+    public MutableLiveData<String> getMm_data() {
+        if (mm_data == null) {
+            mm_data = new MutableLiveData<String>();
+        }
+        return mm_data;
+    }
 
     public MutableLiveData<AllModel> getCurrent() {
         if (currentName == null) {

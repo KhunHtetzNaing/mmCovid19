@@ -18,47 +18,36 @@ import java.util.List;
 
 public class Covid19API {
     private OnLoaded onAllLoaded;
-    private Handler mHandler=new Handler();
-    private boolean mStopHandler = false;
 
     public void load(){
-        Runnable runnable = new Runnable() {
+        new AsyncTask<Void,Void,Document>(){
+
             @Override
-            public void run() {
-                if (!mStopHandler) {
-                    new AsyncTask<Void,Void,Document>(){
+            protected Document doInBackground(Void... voids) {
+                try {
+                    return Jsoup.connect("https://www.worldometers.info/coronavirus/").get();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
 
-                        @Override
-                        protected Document doInBackground(Void... voids) {
-                            try {
-                                return Jsoup.connect("https://www.worldometers.info/coronavirus/").get();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            return null;
-                        }
-
-                        @Override
-                        protected void onPostExecute(Document document) {
-                            super.onPostExecute(document);
-                            if (document!=null){
-                                //All
-                                AllModel model = getAll(document);
-                                //Countries
-                                List<CountryModel> today = parseCountry(document.getElementById("main_table_countries_today").getElementsByTag("tbody").get(0).getElementsByTag("tr"));
-                                List<CountryModel> yesterday = parseCountry(document.getElementById("main_table_countries_yesterday").getElementsByTag("tbody").get(0).getElementsByTag("tr"));
-                                if (onAllLoaded!=null){
-                                    onAllLoaded.allLoaded(model);
-                                    onAllLoaded.countriesLoaded(new List[]{today, yesterday});
-                                }
-                            }
-                        }
-                    }.execute();
-                    mHandler.postDelayed(this, 15000);
+            @Override
+            protected void onPostExecute(Document document) {
+                super.onPostExecute(document);
+                if (document!=null){
+                    //All
+                    AllModel model = getAll(document);
+                    //Countries
+                    List<CountryModel> today = parseCountry(document.getElementById("main_table_countries_today").getElementsByTag("tbody").get(0).getElementsByTag("tr"));
+//                    List<CountryModel> yesterday = parseCountry(document.getElementById("main_table_countries_yesterday").getElementsByTag("tbody").get(0).getElementsByTag("tr"));
+                    if (onAllLoaded!=null){
+                        onAllLoaded.allLoaded(model);
+                        onAllLoaded.countriesLoaded(today);
+                    }
                 }
             }
-        };
-        mHandler.post(runnable);
+        }.execute();
     }
 
     private List<CountryModel> parseCountry(Elements today){
@@ -79,7 +68,6 @@ public class Covid19API {
 
             countryModel.setCountryNameInEnglish(country);
             String mmCountry = CountryUtils.getCountryInMM(CountryUtils.getCountryCode(country));
-            System.out.println(country +" | "+mmCountry);
             country = mmCountry.equalsIgnoreCase("no data") ? country : mmCountry;
 
             countryModel.setCountry(country);
@@ -102,7 +90,7 @@ public class Covid19API {
         this.onAllLoaded=onAllLoaded;
     }
 
-    private String toMmNum(String num){
+    public static String toMmNum(String num){
         num = num.replaceAll("\\D","");
         String out = "";
         for (String a:num.split("")){
@@ -111,7 +99,7 @@ public class Covid19API {
         return out;
     }
 
-    private String replace(String number){
+    private static String replace(String number){
         switch (number){
             case "1": return "၁";
             case "2": return "၂";
@@ -151,6 +139,6 @@ public class Covid19API {
 
     public interface OnLoaded{
         void allLoaded(AllModel all);
-        void countriesLoaded(List<CountryModel> countries[]);
+        void countriesLoaded(List<CountryModel> countries);
     }
 }

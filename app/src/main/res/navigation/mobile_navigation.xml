@@ -3,23 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_total">
+    app:startDestination="@+id/navigation_main">
 
     <fragment
-        android:id="@+id/navigation_total"
-        android:name="com.htetznaing.covid_19counter.ui.total.TotalFragment"
-        android:label="@string/title_total"
-        tools:layout="@layout/fragment_total" />
+        android:id="@+id/navigation_main"
+        android:name="com.htetznaing.covid_19counter.UI.Main.MainFragment"
+        android:label="@string/title_main"
+        tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/navigation_country"
-        android:name="com.htetznaing.covid_19counter.ui.country.CountryFragment"
+        android:name="com.htetznaing.covid_19counter.UI.Country.CountryFragment"
         android:label="@string/title_country"
         tools:layout="@layout/fragment_country" />
 
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.htetznaing.covid_19counter.UI.News.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
+
     <fragment
         android:id="@+id/navigation_note"
-        android:name="com.htetznaing.covid_19counter.ui.note.NoteFragment"
+        android:name="com.htetznaing.covid_19counter.UI.Note.NoteFragment"
         android:label="@string/title_note"
         tools:layout="@layout/fragment_note" />
+
+    <fragment
+        android:id="@+id/navigation_emergency"
+        android:name="com.htetznaing.covid_19counter.UI.Emergency.EmergencyFragment"
+        android:label="@string/title_emergency"
+        tools:layout="@layout/fragment_emergency" />
 </navigation>

@@ -2,9 +2,11 @@
     <string name="app_name">Covid-19 Counter</string>
 
 <!--    Bottom Text-->
-    <string name="title_total">စုစုပေါင်း</string>
-    <string name="title_country">နိုင်ငံအလိုက်</string>
-    <string name="title_note">လိုက်နာရန်</string>
+    <string name="title_main">မြန်မာနှင့်ကမ္ဘာ့အခြေအနေ</string>
+    <string name="title_country">နိုင်ငံအလိုက်အခြေအနေများ</string>
+    <string name="title_news">သတင်းအချက်အလက်များ</string>
+    <string name="title_note">ကာကွယ်ဆောင်ရွက်ရန်</string>
+    <string name="title_emergency">အရေးပေါ်ဆက်သွယ်ရန်နေရာများ</string>
 
     <string name="affects">ကူးစက်ခံရသူ</string>
     <string name="today_affects">ယနေ့ကူးစက်ခံရသူ</string>
@@ -22,5 +24,19 @@
     <string name="search">ရှာဖွေရန်</string>
     <string name="not_found_data">အချက်အလက်ရှာမတွေ့ပါ</string>
     <string name="des">မကြာခဏလက်ကိုဆပ်ပြာဖြင့်သေချာဆေးကြောပါ။</string>
+    <string name="worldwide_status">ကမ္ဘာလုံးဆိုင်ရာအခြေအနေ</string>
+    <string name="myanmar_status">မြန်မာနိုင်ငံအခြေအနေ</string>
+    <string name="last_update_on">အချိန်တွင်နောက်ဆုံးသတင်းရရှိသည်။</string>
+    <string name="fake_news_notice">သတင်းတုသတင်းမှားများရန်မှရှောင်ကြဉ်ရန်
+ကျန်းမာရေးနှင့်အားကစားဝန်ကြီးဌာန နှင့်ကမ္ဘာ့ကျန်းမာရေးအဖွဲ့အစည်းမှ
+ထုတ်ပြန်သောသတင်းအချက်အလက်များကိုသာ ဦးစားပေးကြည့်ရှုပါ။</string>
+    <string name="mohs">ကျန်းမာရေးနှင့်အားကစားဝန်ကြီးဌာန</string>
+    <string name="fb_page">ဖေ့စ်ဘုတ်စာမျက်နှာ</string>
+    <string name="website">ဝက်ဘ်ဆိုက်</string>
+    <string name="who">ကမ္ဘာ့ကျန်းမာရေးအဖွဲ့အစည်း</string>
+    <string name="emergency_search_hint">ပြည်နယ်/တိုင်း/မြို့အမည်</string>
+
+    <string name="choose_num_to_call">ခေါ်လိုသောဖုန်းနံပါတ်ကိုရွေးပါ</string>
+    <string name="cancel_call">ပယ်ဖျက်ရန်</string>
 
 </resources>

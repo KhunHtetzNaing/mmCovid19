@@ -1,4 +1,4 @@
-package com.htetznaing.covid_19counter.ui.note;
+package com.htetznaing.covid_19counter.UI.Note;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
