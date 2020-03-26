@@ -9,7 +9,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <TextView
         android:textColor="@android:color/holo_red_light"
@@ -24,7 +24,7 @@
         android:layout_marginBottom="3dp"
         android:textColor="@android:color/background_light"
         android:background="@color/colorPrimary"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:gravity="center"
         android:id="@+id/tvCountry"
         android:layout_width="match_parent"
@@ -37,6 +37,9 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:id="@+id/mohsFb"
             android:layout_width="wrap_content"
             app:cardCornerRadius="6dp"
@@ -69,6 +72,9 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:id="@+id/mohsWebsite"
             android:layout_width="wrap_content"
             app:cardCornerRadius="6dp"
@@ -108,7 +114,7 @@
         android:layout_marginBottom="3dp"
         android:textColor="@android:color/background_light"
         android:background="@color/colorPrimary"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
@@ -122,6 +128,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/whoFb"
             android:layout_weight="1"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_width="wrap_content"
             app:cardCornerRadius="6dp"
             android:layout_margin="8dp"
@@ -154,6 +163,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/whoWebsite"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             app:cardCornerRadius="6dp"

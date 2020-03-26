@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Covid-19 Counter</string>
+    <string name="app_name">mmCovid19</string>
 
-<!--    Bottom Text-->
+    <!--    Bottom Text-->
     <string name="title_main">မြန်မာနှင့်ကမ္ဘာ့အခြေအနေ</string>
     <string name="title_country">နိုင်ငံအလိုက်အခြေအနေများ</string>
     <string name="title_news">သတင်းအချက်အလက်များ</string>
@@ -16,14 +16,21 @@
     <string name="active">ကုသဆဲ</string>
     <string name="critical">ပြင်းထန်လူနာ</string>
 
-    <string name="wait">ခနစောင့်ပါ</string>
     <string name="load_data">အချက်လက်များရယူနေပါသည်...</string>
     <string name="today">ယနေ့</string>
     <string name="yesterday">မနေ့က</string>
     <string name="search_by_country_name">နိုင်ငံအမည်ဖြင့်ရှာဖွေရန်</string>
     <string name="search">ရှာဖွေရန်</string>
     <string name="not_found_data">အချက်အလက်ရှာမတွေ့ပါ</string>
-    <string name="des">မကြာခဏလက်ကိုဆပ်ပြာဖြင့်သေချာဆေးကြောပါ။</string>
+    <string-array name="splash_messages">
+        <item>မကြာခဏလက်ကိုဆပ်ပြာဖြင့် သေချာဆေးကြောပါ။</item>
+        <item>လူထူထပ်သောနေရာများသို့ သွားရောက်ခြင်းရှောင်ကြည်ပါ။</item>
+        <item>အိပ်ရေးဝဝအိပ်ပါ။</item>
+        <item>နှာချေ၊ ချောင်းဆိုးတဲ့အခါတိုင်း နှာခေါင်းနဲ့ပါးစပ်ကို လုံအောင်ဖုံးပါ။</item>
+        <item>ဖျားနာ၊ ချောင်းဆိုး၊ နေမကောင်းဖြစ်လျှင်
+            နီးစပ်ရာကျန်းမာရေးဌာနသို့ အမြန်သွားပါ။</item>
+    </string-array>
+
     <string name="worldwide_status">ကမ္ဘာလုံးဆိုင်ရာအခြေအနေ</string>
     <string name="myanmar_status">မြန်မာနိုင်ငံအခြေအနေ</string>
     <string name="last_update_on">အချိန်တွင်နောက်ဆုံးသတင်းရရှိသည်။</string>
@@ -38,5 +45,20 @@
 
     <string name="choose_num_to_call">ခေါ်လိုသောဖုန်းနံပါတ်ကိုရွေးပါ</string>
     <string name="cancel_call">ပယ်ဖျက်ရန်</string>
+
+    <string name="no_internet_title">ဝမ်းနည်းပါတယ်</string>
+    <string name="no_internet_message">အချိန်နှင့်တစ်ပြေးညီသတင်းအချက်လက်များရရှိနိုင်ရန်
+အင်တာနက်လိုအပ်ပါသည်။</string>
+    <string name="no_use">မသုံးတော့ပါ</string>
+    <string name="try_again">ထပ်ကြိုးစားပါ</string>
+    <string name="about_mohs_text"><![CDATA[MOHS => https://mohs.gov.mm/]]></string>
+    <string name="about_wm_text"><![CDATA[World Meter => https://www.worldometers.info/]]></string>
+    <string name="updated_date">နောက်ဆုံးထွက်ရှိသောရက်စွဲ : ၂၆၊ ၀၃၊ ၂၀၂၀</string>
+    <string name="version">ဗားရှင်း : 1.0</string>
+    <string name="developer">ဖန်တီးသူ : ခွန်ထက်နိုင်</string>
+    <string name="feedback">အကြံပြုချက်များပေးပို့ရန်</string>
+
+    <string name="welcome">မင်္ဂလာပါ!</string>
+    <string name="ok">ဟုတ်ပြီ</string>
 
 </resources>

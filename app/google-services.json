@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "254779926049",
+    "firebase_url": "https://mmcovid19-2020.firebaseio.com",
+    "project_id": "mmcovid19-2020",
+    "storage_bucket": "mmcovid19-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254779926049:android:fffe9a74d05c6afe2de560",
+        "android_client_info": {
+          "package_name": "com.htetznaing.mmcovid19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254779926049-d21dimii9lmip7te443stso4oj3osle6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMmhJirWj_KZGmu3BIVfBVCA1evJ5VHdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254779926049-d21dimii9lmip7te443stso4oj3osle6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

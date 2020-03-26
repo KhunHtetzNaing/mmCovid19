@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.htetznaing.covid_19counter">
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.htetznaing.mmcovid19">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:usesCleartextTraffic="true"
-        android:name=".MyApplication"
+        android:name="com.htetznaing.mmcovid19.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:name="com.htetznaing.mmcovid19.ImageViewActivity" android:theme="@style/Transparent" ></activity>
 
-        <activity android:name=".MainActivity">
+        <meta-data android:name="com.onesignal.NotificationOpened.DEFAULT" android:value="DISABLE" />
+
+        <activity
+            android:name="com.htetznaing.mmcovid19.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
