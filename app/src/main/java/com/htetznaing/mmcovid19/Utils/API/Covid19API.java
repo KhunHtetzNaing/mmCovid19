@@ -70,6 +70,7 @@ public class Covid19API {
     }
 
     private void loadFromAPI(){
+        System.out.println("Load From API!");
         new AsyncTask<Void,Void,String[]>(){
 
             @Override
@@ -106,30 +107,34 @@ public class Covid19API {
     private List<CountryModel> parseCountry(Elements today){
         List<CountryModel> data = new ArrayList<>();
         for (Element e:today){
-            CountryModel countryModel = new CountryModel();
-            Elements temp = e.getElementsByTag("td");
+            if (!e.toString().contains("style=\"display: none\"")) {
+                CountryModel countryModel = new CountryModel();
+                Elements temp = e.getElementsByTag("td");
+                String country = Constants.notNullString(temp.get(1).text());
 
-            String country = Constants.notNullString(temp.get(0).text());
-            String cases = temp.get(1).text();
-            String todayCases = temp.get(2).text();
-            String deaths = temp.get(3).text();
-            String todayDeaths = temp.get(4).text();
-            String recovered = temp.get(5).text();
-            String active = temp.get(6).text();
-            String critical = temp.get(7).text();
-            String casesPerOneMillion = temp.get(8).text();
+                String cases = temp.get(2).text();
+                String todayCases = temp.get(3).text();
+                String deaths = temp.get(4).text();
+                String todayDeaths = temp.get(5).text();
+                String recovered = temp.get(6).text();
+                String active = temp.get(7).text();
+                String critical = temp.get(8).text();
+                String casesPerOneMillion = temp.get(9).text();
 
-            countryModel.setCountry(country);
-            countryModel.setCases(cases);
-            countryModel.setTodayCases(todayCases);
-            countryModel.setDeaths(deaths);
-            countryModel.setTodayDeaths(todayDeaths);
-            countryModel.setRecovered(recovered);
-            countryModel.setActive(active);
-            countryModel.setCritical(critical);
-            countryModel.setCasesPerOneMillion(casesPerOneMillion);
+                countryModel.setCountry(country);
+                countryModel.setCases(cases);
+                countryModel.setTodayCases(todayCases);
+                countryModel.setDeaths(deaths);
+                countryModel.setTodayDeaths(todayDeaths);
+                countryModel.setRecovered(recovered);
+                countryModel.setActive(active);
+                countryModel.setCritical(critical);
+                countryModel.setCasesPerOneMillion(casesPerOneMillion);
 //            countryModel.setCountryInfo(CountryUtils.getCountryData(country,CountryUtils.getCountryCode(country)));
-            data.add(countryModel);
+                if (!country.equalsIgnoreCase("world")) {
+                    data.add(countryModel);
+                }
+            }
         }
         return data;
     }

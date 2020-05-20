@@ -117,7 +117,7 @@ public class Constants {
 
     public static void openMOHS_MOBILE(Context c){
         Intent intent = new Intent(Intent.ACTION_VIEW)
-                .setData(Uri.parse("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/16ed43418d2045fbbf94cb89cbc9eec4"));
+                .setData(Uri.parse("https://mohs.gov.mm/Main/content/publication/2019-ncov"));
         c.startActivity(intent);
     }
 

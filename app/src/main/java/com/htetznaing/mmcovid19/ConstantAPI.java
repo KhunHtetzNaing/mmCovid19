@@ -88,6 +88,7 @@ public class ConstantAPI {
 
                                 //Myanmar
                                 if (object.has("myanmar")){
+                                    System.out.println(object.get("myanmar"));
                                     MainActivity.totalViewModel.getMm_data().setValue(object.get("myanmar").toString());
                                 }
 

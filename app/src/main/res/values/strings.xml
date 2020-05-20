@@ -53,8 +53,8 @@
     <string name="try_again">ထပ်ကြိုးစားပါ</string>
     <string name="about_mohs_text"><![CDATA[MOHS => https://mohs.gov.mm/]]></string>
     <string name="about_wm_text"><![CDATA[World Meter => https://www.worldometers.info/]]></string>
-    <string name="updated_date">နောက်ဆုံးထွက်ရှိသောရက်စွဲ : ၂၆၊ ၀၃၊ ၂၀၂၀</string>
-    <string name="version">ဗားရှင်း : 1.0</string>
+    <string name="updated_date">နောက်ဆုံးထွက်ရှိသောရက်စွဲ : ၂၀၊ ၀၅၊ ၂၀၂၀</string>
+    <string name="version">ဗားရှင်း : 1.0.1</string>
     <string name="developer">ဖန်တီးသူ : ခွန်ထက်နိုင်</string>
     <string name="feedback">အကြံပြုချက်များပေးပို့ရန်</string>
 

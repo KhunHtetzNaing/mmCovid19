@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         instance = this;
-
         splashDialog = new Dialog(this, R.style.SplashTheme);
         splashDialog.setContentView(R.layout.activity_splash);
         TextView textView = splashDialog.findViewById(R.id.desc);
@@ -152,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 findMM();
             }
         });
-        mmWebView.loadUrl("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/16ed43418d2045fbbf94cb89cbc9eec4");
+        mmWebView.loadUrl("https://mm-mpxteam.net/nso/covid19/mm.json");
     }
 
     private void findMM() {
